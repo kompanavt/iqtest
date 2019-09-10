@@ -26,18 +26,18 @@ ansible localhost -m file -a "dest=/home/vagrant/mc mode=775"
 ```
 Creating an alias. Alias is simply a short name to your MinIO service.
 ```yaml
-ansible localhost - m shell -a "/home/vagrant/mc config host add node1 http://node1:9000 9e22b2ee283109ab44b3ddeb56f9ed7a 9da30539af3639c600c6256f7691750a581c36c2"
+ansible localhost -m shell -a "/home/vagrant/mc config host add node1 http://node1:9000 9e22b2ee283109ab44b3ddeb56f9ed7a 9da30539af3639c600c6256f7691750a581c36c2"
 ```
 Creating user and set the read-write permissions:
 ```yaml
-ansible localhost - m shell -a "/home/vagrant/mc admin user add node1 user1 devuser123"
-ansible localhost - m shell -a "/home/vagrant/mc admin policy set node1 readwrite user=user1"
+ansible localhost -m shell -a "/home/vagrant/mc admin user add node1 user1 devuser123"
+ansible localhost -m shell -a "/home/vagrant/mc admin policy set node1 readwrite user=user1"
 ```
 Make a bucket:
 ```yaml
-ansible localhost - m shell -a "/home/vagrant/mc mb node1/test"
+ansible localhost -m shell -a "/home/vagrant/mc mb node1/test"
 ```
 and upload the test file:
 ```yaml
-ansible localhost - m shell -a "/home/vagrant/mc cp 'test (1).jpg' node1/test"
+ansible localhost -m shell -a "/home/vagrant/mc cp 'test (1).jpg' node1/test"
 ```

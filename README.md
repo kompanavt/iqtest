@@ -6,10 +6,10 @@ Vagrant
 
 ## To run
 
-1. You must set the ip adresses in Vagrantfile and also in the ansible group vars file (/group_vars/all.yml)
-2. Set the minio_access_key and minio_secret_key. (optional)
-3. vagrant up
-4. login to any ip address from node list using http://ip_address/ or domain name if you setting it.
+1. You must set the ip adresses in `Vagrantfile` and also in the ansible group vars file (see the `group_vars/all.yml`)
+2. Set the `minio_access_key` and `minio_secret_key` in group_vars (optional).
+3. `vagrant up`
+4. login to any ip address from node list using `http://ip_address/` or domain name if you setting it.
 
 ## Notes
 
@@ -19,7 +19,7 @@ Every node will configure automatically using vagrant ansible_local.
 
 ***
 
-For managing minio you must login to any node ("vagrant ssh node1" for example) and download the MinIO Client:
+For managing minio you must login to any node (`vagrant ssh node1` for example) and download the MinIO Client:
 ```yaml
 ansible localhost -m shell -a "wget -P /home/vagrant/ https://dl.min.io/client/mc/release/linux-amd64/mc"
 ansible localhost -m file -a "dest=/home/vagrant/mc mode=775"

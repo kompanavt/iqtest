@@ -25,6 +25,7 @@ ansible localhost -m shell -a "wget -P /home/vagrant/ https://dl.min.io/client/m
 ansible localhost -m file -a "dest=/home/vagrant/mc mode=775"
 ```
 Creating an alias. Alias is simply a short name to your MinIO service.
+If you changed `minio_access_key` and `minio_secret_key` you must change last two params.
 ```yaml
 ansible localhost -m shell -a "/home/vagrant/mc config host add node1 http://node1:9000 9e22b2ee283109ab44b3ddeb56f9ed7a 9da30539af3639c600c6256f7691750a581c36c2"
 ```

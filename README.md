@@ -7,9 +7,9 @@ Vagrant
 ## To run
 
 1. You must set the ip adresses in Vagrantfile and also in the ansible group vars file (/group_vars/all.yml)
-
-2. vagrant up
-3. login to any ip address from node list using http://ip_address/ or domain name if you setting it.
+2. Set the minio_access_key and minio_secret_key. (optional)
+3. vagrant up
+4. login to any ip address from node list using http://ip_address/ or domain name if you setting it.
 
 ## Notes
 

@@ -1,0 +1,15 @@
+---
+
+node1: "10.12.112.35"
+node2: "10.12.112.36"
+node3: "10.12.112.37"
+
+
+minio_data_dir1: /mnt/minio1
+minio_data_dir2: /mnt/minio2
+
+minio_default_install_dir: /usr/local/bin
+minio_default_config_dir: "/vagrant/.minio"
+
+minio_access_key: 9e22b2ee283109ab44b3ddeb56f9ed7a
+minio_secret_key: 9da30539af3639c600c6256f7691750a581c36c2

@@ -1,0 +1,18 @@
+---
+
+- name: update /etc/hosts for resolve hosts without dns records
+  become: true
+  template:
+    src: hosts.j2
+    dest: /etc/hosts
+    
+- name: Creating Minio Required Dirs | {{ minio_data_dir1 }} | {{ minio_data_dir2 }} | {{ minio_default_config_dir }}
+  become: true
+  file:
+    dest: "{{ item }}"
+    state: directory
+    recurse: true
+  with_items:
+    - "{{ minio_default_config_dir }}"
+    - "{{ minio_data_dir1 }}"
+    - "{{ minio_data_dir2 }}"

@@ -1,0 +1,21 @@
+---
+
+- name: Install Nginx
+  become: true
+  apt:
+    name:
+      - nginx
+    state: present
+
+- name: configure nginx reverse proxy and load balancer
+  become: true
+  copy:
+    src: files/minio
+    dest: /etc/nginx/sites-enabled/minio
+    
+- name: remove default config
+  become: true
+  file:
+    path: /etc/nginx/sites-enabled/default
+    state: absent
+  notify: restart nginx
